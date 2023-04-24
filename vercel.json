@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://admin-dashboard-backend-56717e721-michalluzniak.vercel.app/:path*"
+      "destination": "https://admin-dashboard-backend-michalluzniak.vercel.app/:path*"
     },
     {
       "source": "/api/:path*/",
-      "destination": "https://admin-dashboard-backend-56717e721-michalluzniak.vercel.app/:path*/"
+      "destination": "https://admin-dashboard-backend-michalluzniak.vercel.app/:path*/"
     }
   ]
 }
