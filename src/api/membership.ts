@@ -15,7 +15,7 @@ export const getTokens = async (username: string, password: string): Promise<Tok
   let ecodedRes = base64.encode(text);
 
   const res = await axios({
-    url: 'https://admin-dashboard-backend-zaven.vercel.app/authorization/token',
+    url: '/api/authorization/token',
     params: { strategy: 'userCredentials' },
     headers: { Authorization: `Basic ${ecodedRes}` },
   });
@@ -35,7 +35,7 @@ export interface DataFromTokensCall {
 export const getNewTokensByRefreshToken = (): Promise<DataFromTokensCall> => {
   return axios({
     method: 'GET',
-    url: 'https://admin-dashboard-backend-zaven.vercel.app/authorization/token?strategy=refreshToken',
+    url: '/api/authorization/token?strategy=refreshToken',
     headers: { Authorization: `Bearer ${Cookies.get('refreshToken')}` },
   });
 };
